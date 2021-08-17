@@ -1,8 +1,8 @@
 ### Date created
 Aug.18 2021
 
-### Project Title
-Post my work on GitHub
+### Post my work on GitHub
+Simulating a realistic workflow to refactormy previous BikeShare project using Git.
 
 ### Description
 Describe what your project is about and what it does
