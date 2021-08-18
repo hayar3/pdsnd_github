@@ -17,13 +17,27 @@ def get_filters():
     """
     print('Hello! Let\'s explore some US bikeshare data!')
     # get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
-
+    city = input('Enter the city you want see data for Chicago , New York City or Washington : ')
+    city = city.casefold()
+    while city not in CITY_DATA:
+        city = input('Invalid city name.Please Try Again!')
+        city = city.casefold()
 
     # get user input for month (all, january, february, ... , june)
-
+    months = ['all', 'january', 'february', 'march', 'april', 'may', 'june']
+    month = input('Enter the month from January to June OR Enter "all" for no month filter : ')
+    month = month.casefold()
+    while month not in months:
+        month = input('Invalid month name.Please Try Again!')
+        month = month.casefold()
 
     # get user input for day of week (all, monday, tuesday, ... sunday)
-
+    days = ['all', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday']
+    day = input('Enter the day from Monday to Sunday OR Enter "all" for no day filter : ')
+    day = day.casefold()
+    while day not in days:
+        day = input('Invalid day name.Please Try Again!')
+        day = day.casefold()
 
     print('-'*40)
     return city, month, day
@@ -106,13 +120,20 @@ def user_stats(df):
     start_time = time.time()
 
     # Display counts of user types
-
+    user_types = df['User Type'].value_counts()
+    print(user_types,'\n')
 
     # Display counts of gender
-
+    if 'Gender' in df.columns:    
+        gender = df['Gender'].value_counts()
+        print(gender,'\n')
 
     # Display earliest, most recent, and most common year of birth
-
+    if 'Birth Year' in df.columns:
+        print('Earliest year of Birth:', df['Birth Year'].min())
+        print('Most Recent year of Birth:', df['Birth Year'].max())
+        print('Most Common year of Birth:', df['Birth Year'].mode()[0])
+        
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
