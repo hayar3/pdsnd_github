@@ -5,10 +5,7 @@ Aug.18 2021
 Simulating a realistic workflow to refactormy previous BikeShare project using Git.
 
 ### Description
-Describe what your project is about and what it does
-
-### Files used
-Include the files used
+This program developed to allow user to explore an US bikeshare and retrive information from the database.
 
 ### Credits
 [How To Write A Great README](https://thoughtbot.com/blog/how-to-write-a-great-readme) - Caleb Thompson
